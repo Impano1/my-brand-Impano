@@ -747,7 +747,6 @@ span {
     color: var(--main-color);
 }
 
-/* Add these styles to your CSS */
 .navbar.active {
     transform: translateY(0);
 }
