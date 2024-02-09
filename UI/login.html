@@ -3,17 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
-    <div class="form">
-        <h2>Login</h2>
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <button class="btnn"><a href="dashboard.html">Login</a></button>
-        <div class="forget-password-link">Forget Password?</div>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="active">Home</a>
+        </nav>
+    </header>
+
+    <div class ="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field" id="nameField">
+                    <i class='bx bx-user'></i>
+                    <input type="text" placeholder="Name">
+                </div>
+
+                <div class="input-field">
+                    <i class='bx bx-envelope'></i>
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="input-field">
+                    <i class='bx bx-lock-alt'></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <p>already have an account? <a href="dashboard.html">Click Here!</a></p>
+            </div>
+            <div class="btn-field">
+                <button type="button" id="signupbtn"><a href="dashboard.html">Sign Up</a></button>
+                <button type="button" id="signinbtn" class="disable">Sign In</button>
+            </div>
+        </form>
     </div>
+
+    <script>
+
+        let signupbtn = document.getElementById("signupbtn");
+        let signinbtn = document.getElementById("signinbtn");
+        let nameField = document.getElementById("nameField");
+        let title = document.getElementById("title");
+
+        signinbtn.onclick = function(){
+            nameField.style.maxHeight = "0";
+            title.innerHTML = "Sign In";
+            signupbtn.classList.add("disable");
+            signinbtn.classList.remove("disable");
+        }
+
+        signupbtn.onclick = function(){
+            nameField.style.maxHeight = "60";
+            title.innerHTML = "Sign Up";
+            signupbtn.classList.remove("disable");
+            signinbtn.classList.add("disable");
+        }
+    </script>
 </body>
 </html>
