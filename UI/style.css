@@ -73,7 +73,7 @@ body {
 }
 
 section {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     padding: 10rem 9% 2rem;
 }
 
@@ -83,6 +83,7 @@ section {
     padding: 0 9%;
     background-size: cover;
     background-position: left;
+    min-height: 100vh;
 }
 
 .home-content {
@@ -1041,3 +1042,9 @@ form p a {
             opacity: 0;
         }
         }
+
+        @media only screen and (max-width: 420px){
+            .blog-post {
+                display: block;
+            }
+            }
