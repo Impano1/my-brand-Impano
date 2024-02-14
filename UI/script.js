@@ -32,4 +32,9 @@ window.onscroll = () => {
         header.classList.toggle('sticky', window.scrollY > 100);
     }
 }
-    
+ 
+const findmore = document.querySelector("#findmore");
+
+findmore.addEventListener("click", () => {
+    window.location.href= "./findmore.html";
+})

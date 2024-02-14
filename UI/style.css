@@ -321,7 +321,7 @@ span {
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(--main-color);
-    animation: animate 2s linear infinite;
+    animation: aboutspinner 8s linear infinite;
 }
 
 .about-content {
@@ -784,6 +784,7 @@ span {
     width: 400px;
     padding: 40px;
     background: var(--second-bg-color);
+    background: var(--second-bg-color);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
@@ -1019,3 +1020,9 @@ form p a {
             opacity: 0;
         }
     }
+
+@keyframes aboutspinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
