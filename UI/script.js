@@ -36,8 +36,5 @@ window.onscroll = () => {
 const findmore = document.querySelector("#findmore");
 
 findmore.addEventListener("click", () => {
-    const link = findmore.createElement("a");
-    link.href = "./findmore.html";
-    link.findmore = "blogs";
-    link.click();
+    window.location.href= "./findmore.html";
 })
