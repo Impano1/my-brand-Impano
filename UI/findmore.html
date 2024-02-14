@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Blog Title</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="blog-posts">
+    <article class="blog-post">
+        <img src="article1.jpg" alt="Article 1 Image">
+        <h2>Blog Post Title 1</h2>
+        <p>Blog post content goes here...</p>
+        <div class="actions">
+            <button class="like-btn" onclick="likePost(this)">Like</button>
+            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
+            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        </div>
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <ul class="comments-list" id="commentsList1"></ul>
+            <div class="comment-form">
+                <textarea placeholder="Add a comment"></textarea>
+                <button onclick="addComment('commentsList1')">Add Comment</button>
+            </div>
+        </div>
+    </article>
+
+    <article class="blog-post">
+        <img src="article2.jpg" alt="Article 2 Image">
+        <h2>Blog Post Title 2</h2>
+        <p>Blog post content goes here...</p>
+        <div class="actions">
+            <button class="like-btn" onclick="likePost(this)">Like</button>
+            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
+            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        </div>
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <ul class="comments-list" id="commentsList2"></ul>
+            <div class="comment-form">
+                <textarea placeholder="Add a comment"></textarea>
+                <button onclick="addComment('commentsList2')">Add Comment</button>
+            </div>
+        </div>
+    </article>
+
+    <article class="blog-post">
+        <img src="article3.jpg" alt="Article 3 Image">
+        <h2>Blog Post Title 3</h2>
+        <p>Blog post content goes here...</p>
+        <div class="actions">
+            <button class="like-btn" onclick="likePost(this)">Like</button>
+            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
+            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        </div>
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <ul class="comments-list" id="commentsList3"></ul>
+            <div class="comment-form">
+                <textarea placeholder="Add a comment"></textarea>
+                <button onclick="addComment('commentsList3')">Add Comment</button>
+            </div>
+        </div>
+    </article>
+
+    <article class="blog-post">
+        <img src="article4.jpg" alt="Article 4 Image">
+        <h2>Blog Post Title 4</h2>
+        <p>Blog post content goes here...</p>
+        <div class="actions">
+            <button class="like-btn" onclick="likePost(this)">Like</button>
+            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
+            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        </div>
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <ul class="comments-list" id="commentsList4"></ul>
+            <div class="comment-form">
+                <textarea placeholder="Add a comment"></textarea>
+                <button onclick="addComment('commentsList4')">Add Comment</button>
+            </div>
+        </div>
+    </article>
+</section>
+
+<footer>
+    <p>&copy; 2024 Blog Title. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
