@@ -38,3 +38,10 @@ const findmore = document.querySelector("#findmore");
 findmore.addEventListener("click", () => {
     window.location.href= "./findmore.html";
 })
+
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('bx-x');
+});
