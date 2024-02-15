@@ -979,8 +979,14 @@ form p a {
     }
 
     .navbar {
-        transform: translateY(-100%);
+        transform: translateY(-0%);
         transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar.show {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .navbar a {
