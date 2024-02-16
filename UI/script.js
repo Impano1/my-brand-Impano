@@ -44,4 +44,47 @@ let navbar = document.querySelector('.navbar');
 
 menuIcon.addEventListener('click', () => {
     navbar.classList.toggle('show');
-});
+})
+
+const form = document.getElementById("contactform");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+     validateForm()
+})
+
+function validateForm() {
+    console.log("working")
+    const fullName = document.getElementById("fullName").value.trim();
+    console.log(fullName)
+    const email = document.getElementById("email").value.trim();
+    const mobileNumber = document.getElementById("mobileNumber").value.trim();
+    const emailSubject = document.getElementById("emailSubject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (fullName === "") {
+        alert("Please enter your full name");
+        return false;
+    }
+
+    if (email === "" || !validateEmail(email)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    if (isNaN(mobileNumber) || mobileNumber.length !== 10) {
+        alert("Please enter a valid 10-digit mobile number");
+        return false;
+    }
+
+    if (emailSubject === "") {
+        alert("Please enter the email subject");
+        return false;
+    }
+
+    if (message === "") {
+        alert("Please enter your message");
+        return false;
+    }
+
+    return true;
+}
