@@ -715,6 +715,22 @@ span {
     cursor: pointer;
 }
 
+.field .error-txt {
+    font-size: 14.5px;
+    color: rgb(205, 4, 4);
+    text-align: left;
+    margin: -5px 0 10px;
+    display: none;
+}
+
+.field.error .error-txt {
+    display: block;
+}
+
+.field.error .item {
+    border-color: rgb(205, 4, 4);
+}
+
 .fotter {
     display: flex;
     justify-content: space-between;
