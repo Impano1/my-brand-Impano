@@ -70,3 +70,30 @@ document.addEventListener("DOMContentLoaded", function () {
     recentBlogsBox.appendChild(blogEntry);
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const isAuthenticated = checkAuthentication();
+
+  if (!isAuthenticated) {
+    window.location.href = "login.html";
+  }
+
+  const logoutButton = document.getElementById("logoutButton");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", function () {
+      logout();
+    });
+  }
+});
+
+function checkAuthentication() {
+  const userData = JSON.parse(localStorage.getItem("currentUser"));
+
+  return userData && userData.email === "lechretien200@gmail.com";
+}
+
+function logout() {
+  localStorage.removeItem("userData");
+
+  window.location.href = "login.html";
+}
