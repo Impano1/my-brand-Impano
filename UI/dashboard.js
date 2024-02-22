@@ -48,25 +48,60 @@ document.addEventListener("DOMContentLoaded", function () {
     blogEntry.classList.add("blog-entry");
     blogEntry.dataset.blogId = blogData.id;
 
-    blogEntry.innerHTML = `
-      <h3>${blogData.name}</h3>
-      <p>Description: ${blogData.description}</p>
-      <p>Link: <a href="${blogData.link}" target="_blank">${blogData.link}</a></p>
-      <button class="edit-btn"><i class="bx bxs-edit-alt"></i></button>
-      <button class="delete-btn"><i class="bx bx-trash"></i></button>
-    `;
+    const blogContent = `
+    <h3>${blogData.name}</h3>
+    <p>Description: ${blogData.description}</p>
+    <p>Link: <a href="${blogData.link}" target="_blank">${blogData.link}</a></p>
+    <button class="edit-btn"><i class="bx bxs-edit-alt"></i></button>
+    <button class="delete-btn"><i class="bx bx-trash"></i></button>
+  `;
+    blogEntry.innerHTML = blogContent;
 
-    blogEntry
-      .querySelector(".delete-btn")
-      .addEventListener("click", function () {
-        localStorage.removeItem(blogData.id);
-        blogEntry.remove();
-      });
+    const deleteBtn = blogEntry.querySelector(".delete-btn");
+    deleteBtn.addEventListener("click", function () {
+      localStorage.removeItem(blogData.id);
+      blogEntry.remove();
+    });
 
-    blogEntry.querySelector(".edit-btn").addEventListener("click", function () {
+    const editBtn = blogEntry.querySelector(".edit-btn");
+    editBtn.addEventListener("click", function () {
       alert("Editing in progress");
     });
 
     recentBlogsBox.appendChild(blogEntry);
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const isAuthenticated = checkAuthentication();
+
+  if (!isAuthenticated) {
+    window.location.href = "login.html";
+  }
+
+  const logoutButton = document.getElementById("logoutButton");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", function () {
+      logout();
+    });
+  }
+});
+
+// function checkAuthentication() {
+//   const userData = JSON.parse(localStorage.getItem("currentUser"));
+
+//   return userData && userData.email === "lechretien200@gmail.com";
+// }
+
+function checkAuthentication() {
+  const userData = JSON.parse(localStorage.getItem("currentUser"));
+
+  return (
+    userData && userData.email === "lechretien200@gmail.com" && userData.isAdmin
+  );
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+}

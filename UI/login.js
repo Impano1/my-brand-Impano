@@ -19,12 +19,28 @@ function saveData() {
     password: password,
   };
 
+  // function checkAuthentication() {
+  //   const userData = JSON.parse(localStorage.getItem("currentUser"));
+
+  //   return userData && userData.email === "lechretien200@gmail.com";
+  // }
+
+  function checkAuthentication() {
+    const userData = JSON.parse(localStorage.getItem("currentUser"));
+
+    return (
+      userData &&
+      userData.email === "lechretien200@gmail.com" &&
+      userData.isAdmin
+    );
+  }
+
   const datas = JSON.parse(localStorage.getItem("userData"));
 
   const currentUser = datas.find((elt) => elt.email === userData.email);
 
   if (currentUser) {
-    if (currentUser.password === userData.password) {
+    if (currentUser.data === userData.password) {
       localStorage.setItem("currentUser", JSON.stringify(currentUser));
       location.href = "dashboard.html";
     } else {

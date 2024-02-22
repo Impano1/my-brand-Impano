@@ -1,193 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Page</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #081B23;
-}
-
-header {
-    background-color: #3498db;
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-section.blog-posts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-article.blog-post {
-    width: 45%;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #3498db;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-article.blog-post img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-article.blog-post h2 {
-    color: whitesmoke;
-}
-
-article.blog-post p {
-    color: whitesmoke;
-}
-
-article.blog-post .actions {
-    margin-top: 10px;
-}
-
-article.blog-post .comments-section {
-    display: none;
-}
-
-footer {
-    background-color: #112E41;
-    color: white;
-    text-align: center;
-    padding: 1em;
-}
-
-button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Blog page</h1>
-    <nav>
+    <link rel="stylesheet" href="findmore.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Blog page</h1>
+      <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<section class="blog-posts">
-    <article class="blog-post">
-        <img src="image/blog5.jpg" alt="Article 1 Image">
+    <section class="post" data-post-id="blogs">
+      <article class="blog-post">
+        <img src="image/blog5.jpg" alt="Article 1 Image" />
         <h2>Advanced Tech</h2>
-        <p>We will help you find hope even in the midst of the hopelessness caused by your loved one’s mental health challenge.</p>
-        <div class="actions">
-            <button class="like-btn" onclick="likePost(this)">Like</button>
-            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
-            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        <p>
+          We will help you find hope even in the midst of the hopelessness
+          caused by your loved one’s mental health challenge.
+        </p>
+        <div class="post-ratings-container">
+          <div class="post-rating post-rating-selected">
+            <span class="post-rating-button material-icons">thumb_up</span>
+            <span class="post-rating-count">0</span>
+          </div>
+          <div class="post-rating">
+            <span class="post-rating-button material-icons">thumb_down</span>
+            <span class="post-rating-count">0</span>
+          </div>
         </div>
         <div class="comments-section">
-            <h3>Comments</h3>
-            <ul class="comments-list" id="commentsList1"></ul>
-            <div class="comment-form">
-                <textarea placeholder="Add a comment"></textarea>
-                <button onclick="addComment('commentsList1')">Add Comment</button>
-            </div>
+          <h3>Comments</h3>
+          <ul class="comments-list" id="commentsList1"></ul>
+          <div class="comment-form">
+            <textarea placeholder="Add a comment"></textarea>
+            <button onclick="addComment('commentsList1')">Add Comment</button>
+          </div>
         </div>
-    </article>
+      </article>
 
-    <article class="blog-post">
-        <img src="image/blog6.jpg" alt="Article 2 Image">
+      <article class="blog-post">
+        <img src="image/blog6.jpg" alt="Article 2 Image" />
         <h2>Feed Your Brain</h2>
-        <p>Anyone can learn from the photo blog Behind the Shutter. The guide covers tutorials for advanced photography techniques, like perfecting a portrait using just one light or using various gels to create colored shadows. Whether it’s tricks for better ROI, reviews on cheap tools that achieve professional photography results, or fascinating personal stories about photographers, there’s much to learn.</p>
-        <div class="actions">
-            <button class="like-btn" onclick="likePost(this)">Like</button>
-            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
-            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        <p>
+          Anyone can learn from the photo blog Behind the Shutter. The guide
+          covers tutorials for advanced photography techniques, like perfecting
+          a portrait using just one light or using various gels to create
+          colored shadows. Whether it’s tricks for better ROI, reviews on cheap
+          tools that achieve professional photography results, or fascinating
+          personal stories about photographers, there’s much to learn.
+        </p>
+        <div class="post-ratings-container">
+          <div class="post-rating post-rating-selected">
+            <span class="post-rating-button material-icons">thumb_up</span>
+            <span class="post-rating-count">0</span>
+          </div>
+          <div class="post-rating">
+            <span class="post-rating-button material-icons">thumb_down</span>
+            <span class="post-rating-count">0</span>
+          </div>
         </div>
         <div class="comments-section">
-            <h3>Comments</h3>
-            <ul class="comments-list" id="commentsList2"></ul>
-            <div class="comment-form">
-                <textarea placeholder="Add a comment"></textarea>
-                <button onclick="addComment('commentsList2')">Add Comment</button>
-            </div>
+          <h3>Comments</h3>
+          <ul class="comments-list" id="commentsList2"></ul>
+          <div class="comment-form">
+            <textarea placeholder="Add a comment"></textarea>
+            <button onclick="addComment('commentsList2')">Add Comment</button>
+          </div>
         </div>
-    </article>
+      </article>
 
-    <article class="blog-post">
-        <img src="image/blog4.jpg" alt="Article 3 Image">
+      <article class="blog-post">
+        <img src="image/blog4.jpg" alt="Article 3 Image" />
         <h2>Mental health</h2>
-        <p>Anyone can learn from the photo blog Behind the Shutter. The guide covers tutorials for advanced photography techniques, like perfecting a portrait using just one light or using various gels to create colored shadows. Whether it’s tricks for better ROI, reviews on cheap tools that achieve professional photography results, or fascinating personal stories about photographers, there’s much to learn.</p>
-        <div class="actions">
-            <button class="like-btn" onclick="likePost(this)">Like</button>
-            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
-            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        <p>
+          Anyone can learn from the photo blog Behind the Shutter. The guide
+          covers tutorials for advanced photography techniques, like perfecting
+          a portrait using just one light or using various gels to create
+          colored shadows. Whether it’s tricks for better ROI, reviews on cheap
+          tools that achieve professional photography results, or fascinating
+          personal stories about photographers, there’s much to learn.
+        </p>
+        <div class="post-ratings-container">
+          <div class="post-rating post-rating-selected">
+            <span class="post-rating-button material-icons">thumb_up</span>
+            <span class="post-rating-count">0</span>
+          </div>
+          <div class="post-rating">
+            <span class="post-rating-button material-icons">thumb_down</span>
+            <span class="post-rating-count">0</span>
+          </div>
         </div>
         <div class="comments-section">
-            <h3>Comments</h3>
-            <ul class="comments-list" id="commentsList3"></ul>
-            <div class="comment-form">
-                <textarea placeholder="Add a comment"></textarea>
-                <button onclick="addComment('commentsList3')">Add Comment</button>
-            </div>
+          <h3>Comments</h3>
+          <ul class="comments-list" id="commentsList3"></ul>
+          <div class="comment-form">
+            <textarea placeholder="Add a comment"></textarea>
+            <button onclick="addComment('commentsList3')">Add Comment</button>
+          </div>
         </div>
-    </article>
+      </article>
 
-    <article class="blog-post">
-        <img src="image/blog7.jpg" alt="Article 4 Image">
+      <article class="blog-post">
+        <img src="image/blog7.jpg" alt="Article 4 Image" />
         <h2>Kongwe 4</h2>
-        <p>Anyone can learn from the photo blog Behind the Shutter. The guide covers tutorials for advanced photography techniques, like perfecting a portrait using just one light or using various gels to create colored shadows. Whether it’s tricks for better ROI, reviews on cheap tools that achieve professional photography results, or fascinating personal stories about photographers, there’s much to learn.</p>
-        <div class="actions">
-            <button class="like-btn" onclick="likePost(this)">Like</button>
-            <button class="comment-btn" onclick="toggleComments(this)">Comments</button>
-            <button class="subscribe-btn" onclick="subscribeToBlog(this)">Subscribe</button>
+        <p>
+          Anyone can learn from the photo blog Behind the Shutter. The guide
+          covers tutorials for advanced photography techniques, like perfecting
+          a portrait using just one light or using various gels to create
+          colored shadows. Whether it’s tricks for better ROI, reviews on cheap
+          tools that achieve professional photography results, or fascinating
+          personal stories about photographers, there’s much to learn.
+        </p>
+        <div class="post-ratings-container">
+          <div class="post-rating post-rating-selected">
+            <span class="post-rating-button material-icons">thumb_up</span>
+            <span class="post-rating-count">0</span>
+          </div>
+          <div class="post-rating">
+            <span class="post-rating-button material-icons">thumb_down</span>
+            <span class="post-rating-count">0</span>
+          </div>
         </div>
         <div class="comments-section">
-            <h3>Comments</h3>
-            <ul class="comments-list" id="commentsList4"></ul>
-            <div class="comment-form">
-                <textarea placeholder="Add a comment"></textarea>
-                <button onclick="addComment('commentsList4')">Add Comment</button>
-            </div>
+          <h3>Comments</h3>
+          <ul class="comments-list" id="commentsList4"></ul>
+          <div class="comment-form">
+            <textarea placeholder="Add a comment"></textarea>
+            <button onclick="addComment('commentsList4')">Add Comment</button>
+          </div>
         </div>
-    </article>
-</section>
+      </article>
+    </section>
 
-<footer>
-    <p>&copy; 2024 Impano . All rights reserved.</p>
-</footer>
+    <footer>
+      <p>&copy; 2024 Impano . All rights reserved.</p>
+    </footer>
 
-<script src="script.js"></script>
-</body>
+    <script src="findmore.js"></script>
+  </body>
 </html>
