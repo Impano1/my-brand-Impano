@@ -38,7 +38,6 @@ const localStorageDatas = localStorage.getItem("userData");
 if (localStorageDatas) {
   const currentUser = JSON.parse(localStorageDatas);
   if (currentUser && currentUser.email) {
-  
     location.href = "index.html";
   }
 }
@@ -59,6 +58,7 @@ function saveData() {
     name,
     email,
     password,
+    isAdmin: false,
   };
 
   const datas = JSON.parse(localStorage.getItem("userData"));

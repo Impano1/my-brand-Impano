@@ -19,10 +19,20 @@ function saveData() {
     password: password,
   };
 
+  // function checkAuthentication() {
+  //   const userData = JSON.parse(localStorage.getItem("currentUser"));
+
+  //   return userData && userData.email === "lechretien200@gmail.com";
+  // }
+
   function checkAuthentication() {
     const userData = JSON.parse(localStorage.getItem("currentUser"));
 
-    return userData && userData.email === "lechretien200@gmail.com";
+    return (
+      userData &&
+      userData.email === "lechretien200@gmail.com" &&
+      userData.isAdmin
+    );
   }
 
   const datas = JSON.parse(localStorage.getItem("userData"));
