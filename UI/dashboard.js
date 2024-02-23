@@ -1,10 +1,3 @@
-const currentUser = localStorage.getItem("currentUser");
-if (!currentUser) {
-  location.href = "login.html";
-}
-
-console.log(currentUser);
-
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("form");
 
@@ -49,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
     blogEntry.dataset.blogId = blogData.id;
 
     const blogContent = `
-    <h3>${blogData.name}</h3>
-    <p>Description: ${blogData.description}</p>
-    <p>Link: <a href="${blogData.link}" target="_blank">${blogData.link}</a></p>
-    <button class="edit-btn"><i class="bx bxs-edit-alt"></i></button>
-    <button class="delete-btn"><i class="bx bx-trash"></i></button>
-  `;
+      <h3>${blogData.name}</h3>
+      <p>Description: ${blogData.description}</p>
+      <p>Link: <a href="${blogData.link}" target="_blank">${blogData.link}</a></p>
+      <button class="edit-btn"><i class="bx bxs-edit-alt"></i></button>
+      <button class="delete-btn"><i class="bx bx-trash"></i></button>
+    `;
     blogEntry.innerHTML = blogContent;
 
     const deleteBtn = blogEntry.querySelector(".delete-btn");
@@ -87,21 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// function checkAuthentication() {
-//   const userData = JSON.parse(localStorage.getItem("currentUser"));
-
-//   return userData && userData.email === "lechretien200@gmail.com";
-// }
-
 function checkAuthentication() {
   const userData = JSON.parse(localStorage.getItem("currentUser"));
-
-  return (
-    userData && userData.email === "lechretien200@gmail.com" && userData.isAdmin
-  );
+  return userData && userData.email === "winter@gmail.com" && userData.isAdmin;
 }
 
 function logout() {
+  console.log("Logout function called");
   localStorage.removeItem("currentUser");
   window.location.href = "login.html";
 }
