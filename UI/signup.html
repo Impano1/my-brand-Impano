@@ -1,0 +1,56 @@
+1 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@4.0.0/build/cjs/index.min.js"></script>
+    <!-- <script>
+      const currentUser = localStorage.getItem("currentUser");
+      if (currentUser) {
+        location.href = "dashboard.html";
+      }
+    </script> -->
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+      </nav>
+    </header>
+
+    <div class="form-box">
+      <h1 id="title">Sign Up</h1>
+      <form id ="signupForm">
+        <div class="input-group">
+          <div class="input-field" id="nameField">
+            <i class="bx bx-user"></i>
+            <input id="username" type="text" placeholder="Name" />
+          </div>
+
+          <div class="input-field">
+            <i class="bx bx-envelope"></i>
+            <input id="email" type="email" placeholder="Email" />
+          </div>
+
+          <div class="input-field">
+            <i class="bx bx-lock-alt"></i>
+            <input id="password" type="password" placeholder="Password" />
+          </div>
+          <p>already have an account? <a href="login.html">Click Here!</a></p>
+        </div>
+        <div class="btn-field">
+          <!-- <input type="submit"  value="signup"  > -->
+          <button type="submit" id="create"  value="signup" >Sign Up</button>
+        </div>
+      </form>
+    </div>
+    <script src="./js/signup.js"></script>
+  </body>
+</html>

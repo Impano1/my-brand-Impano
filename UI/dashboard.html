@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- <script>
+      const currentUser = localStorage.getItem("currentUser");
+      if (!currentUser) {
+        location.href = "login.html";
+      }
+    </script> -->
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Impano Dashboard.</a>
+
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <nav class="navbar">
+        <div class="actions">
+          <button><i class="bx bx-user"></i></button>
+          <button><i class="bx bxs-bell-ring"></i></button>
+        </div>
+      </nav>
+      <a href="index.html" class="home-button">Go to Home</a>
+      <button id="logout">Logout</button>
+    </header>
+
+    <div class="dashboard-container">
+      <div class="info-box">
+        <h2>Author Info</h2>
+        <p>Name: Impano Chretien</p>
+        <p>Blogs: 2</p>
+        <p>Subscribers: 13k</p>
+      </div>
+
+      <div class="add-blog-box">
+        <h2>Add New Blog</h2>
+        <form id="addBlogForm">
+          <label for="blog-name">Blog Name:</label>
+          <input type="text" id="title" name="title"/>
+
+          <label for="blog-description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            
+          ></textarea>
+
+          
+          <label for="blog-image">Add Image:</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+          />
+
+          <button type="submit">Post Blog</button>
+        </form>
+      </div>
+    </div>
+    <div class="recent-blogs-box">
+      <h2>Blogs List</h2><br>
+      <div class="table-reponsive">
+        <table width="100%" border="2" >
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Photo</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Comments</th>
+                <th>Likes</th>
+               
+                <!-- <th>Author</th> -->
+                <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="blogTableBody">
+               
+            </tbody>
+
+        </table>
+      </div>
+      </div>
+       <!-- Form for updating user details -->
+  
+  <form id="updateForm" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    <input type="hidden" id="updateBlogId" name="blogId">
+    <h1>Update User</h1>
+    <label for="updateTitle">Title:</label><br>
+    <input type="text" id="updateTitle" name="title" required><br>
+    <img id="updatePicturePreview" src="" alt="Update Picture Preview" style="max-width: 100px; max-height: 100px;"><br>
+    <label for="updatePicture">Picture:</label><br>
+    <input type="file" id="updateImage" name="image"><br>
+    <label for="updateDescription">Description:</label><br>
+    <textarea id="updateDescription" name="description" rows="4" required></textarea><br>
+    
+    <button type="submit">Update</button>
+</div>
+  </form>
+    <script src="./js/addblog.js"></script>
+    <script src="./js/blogs-list.js"></script>
+  </body>
+</html>
