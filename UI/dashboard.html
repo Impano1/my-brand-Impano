@@ -28,7 +28,7 @@
         </div>
       </nav>
       <a href="index.html" class="home-button">Go to Home</a>
-      <button id="logoutButton">Logout</button>
+      <button id="logout">Logout</button>
     </header>
 
     <div class="dashboard-container">
@@ -41,49 +41,74 @@
 
       <div class="add-blog-box">
         <h2>Add New Blog</h2>
-        <form>
+        <form id="addBlogForm">
           <label for="blog-name">Blog Name:</label>
-          <input type="text" id="blog-name" name="blog-name" required />
+          <input type="text" id="title" name="title"/>
 
           <label for="blog-description">Description:</label>
           <textarea
-            id="blog-description"
-            name="blog-description"
-            required
+            id="description"
+            name="description"
+            
           ></textarea>
 
-          <label for="blog-link">Link:</label>
-          <input type="url" id="blog-link" name="blog-link" required />
-
+          
           <label for="blog-image">Add Image:</label>
           <input
             type="file"
-            id="blog-image"
-            name="blog-image"
+            id="image"
+            name="image"
             accept="image/*"
           />
 
           <button type="submit">Post Blog</button>
         </form>
       </div>
-
-      <div class="recent-blogs-box">
-        <h2>Recent Blogs</h2>
-        <div class="blog-entry">
-          <h3>Blog Title 1</h3>
-          <p>Views: 100 | Comments: 20 | Likes: 15</p>
-          <button><i class="bx bxs-edit-alt"></i></button>
-          <button><i class="bx bx-trash"></i></button>
-        </div>
-
-        <div class="blog-entry">
-          <h3>Blog Title 2</h3>
-          <p>Views: 75 | Comments: 10 | Likes: 8</p>
-          <button><i class="bx bxs-edit-alt"></i></button>
-          <button><i class="bx bx-trash"></i></button>
-        </div>
-      </div>
     </div>
-    <script src="dashboard.js"></script>
+    <div class="recent-blogs-box">
+      <h2>Blogs List</h2><br>
+      <div class="table-reponsive">
+        <table width="100%" border="2" >
+            <thead>
+                <tr>
+                <th>ID</th>
+                <th>Photo</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Comments</th>
+                <th>Likes</th>
+               
+                <!-- <th>Author</th> -->
+                <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="blogTableBody">
+               
+            </tbody>
+
+        </table>
+      </div>
+      </div>
+       <!-- Form for updating user details -->
+  
+  <form id="updateForm" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+    <input type="hidden" id="updateBlogId" name="blogId">
+    <h1>Update User</h1>
+    <label for="updateTitle">Title:</label><br>
+    <input type="text" id="updateTitle" name="title" required><br>
+    <img id="updatePicturePreview" src="" alt="Update Picture Preview" style="max-width: 100px; max-height: 100px;"><br>
+    <label for="updatePicture">Picture:</label><br>
+    <input type="file" id="updateImage" name="image"><br>
+    <label for="updateDescription">Description:</label><br>
+    <textarea id="updateDescription" name="description" rows="4" required></textarea><br>
+    
+    <button type="submit">Update</button>
+</div>
+  </form>
+    <script src="./js/addblog.js"></script>
+    <script src="./js/blogs-list.js"></script>
   </body>
 </html>

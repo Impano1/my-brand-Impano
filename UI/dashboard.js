@@ -68,6 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const isAuthenticated = checkAuthentication();
 
+  var authToken = localStorage.getItem("authToken");
+  // var logoutButton = document.getElementById("logoutButton");
+  if (authToken) {
+    location.href = "index.html";
+  }
+
   if (!isAuthenticated) {
     window.location.href = "login.html";
   }
