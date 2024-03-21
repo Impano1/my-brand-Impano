@@ -17,6 +17,40 @@
         location.href = "dashboard.html";
       }
     </script> -->
+
+    <script>
+      // Function to check if user is authenticated
+      function isAuthenticated() {
+          const token = localStorage.getItem('token');
+          return token ? true : false;
+      }
+
+      // Function to get user role from token
+      function getUserRole() {
+          const token = localStorage.getItem('token');
+          if (token) {
+              const decodedToken = jwtDecode(token);
+              return decodedToken.role;
+          }
+          return null;
+        }
+
+        // Function to redirect authenticated users from login and sign-up pages
+        function redirectAuthenticatedUsers() {
+            if (isAuthenticated()) {
+                const role = getUserRole();
+                if (role === 'admin') {
+                    window.location.href = 'dashboard.html';
+                    // Redirect admin users to admin dashboard
+                } else if (role === 'user') {
+                    window.location.href = 'blogs.html'; // Redirect regular users to user dashboard
+                }
+            }
+        }
+
+        // Call redirectAuthenticatedUsers function
+        redirectAuthenticatedUsers();
+    </script>
     <title>Login</title>
   </head>
   <body>
