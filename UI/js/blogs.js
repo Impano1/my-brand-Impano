@@ -78,3 +78,21 @@ function viewBlog(blogId) {
   // Redirect the user to viewblog.html with the blogId parameter
   window.location.href = `viewblog.html?blogId=${blogId}`;
 }
+
+// Function to handle user logout
+const logoutUser = () => {
+  // Remove token from localStorage or session storage
+  localStorage.removeItem('token');
+  // Redirect to the login page
+  window.location.href = 'login.html';
+}
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Other code ...
+
+  // Event listener for logout button
+  document.getElementById('logout').addEventListener('click', () => {
+      logoutUser(); // Call the logout function
+  });
+
+});
